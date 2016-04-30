@@ -1,6 +1,6 @@
 const FramesController = require("./frames-controller");
 const DrawingConfiguration = require("./drawing-configuration");
-const Menu = require("./menu");
+const ViewConfiguration = require("./view-configuration");
 
 // webpack
 require("./../css/style.css");
@@ -9,7 +9,7 @@ require("web-animations-js");
 
 let framesController;
 let drawingConfiguration;
-let menu;
+let viewConfiguration;
 
 document.addEventListener("DOMContentLoaded", function() {
   const firstFrameId = 0;
@@ -25,11 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
   framesController.append(firstFrameId, firstCanvasId);
   framesController.setCurrentFrame(firstFrameId);
 
-  menu = new Menu();
-
-  document.getElementById("menu-side-btn")
-    .addEventListener("click", function() {
-      menu.toggleMenu();
-    });
+  viewConfiguration = new ViewConfiguration(document.getElementById("menu"));
 });
 
