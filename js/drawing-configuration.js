@@ -2,15 +2,10 @@ const ColorPickerPanel = require("./color-picker-panel");
 const LineWidthPickerPanel = require("./line-width-picker-panel");
 const SequencePanel = require("./sequence-panel");
 
+// framesControllerから触られる部分のみを定義する
 function DrawingConfiguration() {
-  const defaultPalleteColors = ["red", "orange", "yellow", "lightgreen",
-    "green", "skyblue", "blue", "purple", "black", "white"];
-
   this.colorPickerPanel =
-    new ColorPickerPanel(document.getElementById("menu-colors"), "red");
-  defaultPalleteColors
-    .forEach(color => { this.colorPickerPanel.addPalette(color); });
-
+    new ColorPickerPanel("red");
   this.lineWidthPickerPanel =
     new LineWidthPickerPanel(document.getElementById("menu-line-width"), 10);
 

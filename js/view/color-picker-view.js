@@ -25,3 +25,5 @@ function isColor(color) {
   return testElement.style.backgroundColor !== "";
 }
 
+module.exports = ColorPickerView;
+
