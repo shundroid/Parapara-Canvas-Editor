@@ -4,7 +4,7 @@ function MenuView(element) {
   this.element = element;
 
   stateList.frameState.subscribe((newState) => {
-    this.toggleOpenMenuViewButton(newState === "idling");
+    this.toggleOpenMenuButton(newState === "idling");
   });
 
   document.getElementById("menu-side-btn")
@@ -25,7 +25,7 @@ MenuView.prototype.hideMenu = function() {
   this.element.classList.remove("menu-open");
 };
 
-MenuView.prototype.toggleOpenMenu = function(isVisible) {
+MenuView.prototype.toggleOpenMenuButton = function(isVisible) {
   const sidebtn = document.getElementById("menu-side-btn");
   if (isVisible) {
     sidebtn.animate(
