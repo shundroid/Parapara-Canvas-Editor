@@ -25,6 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
   framesController.append(firstFrameId, firstCanvasId);
   framesController.setCurrentFrame(firstFrameId);
 
-  viewConfiguration = new ViewConfiguration(document.getElementById("menu"));
+  viewConfiguration = new ViewConfiguration();
 });
 
